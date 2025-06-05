@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package saludo;
+
+// Mensaje para la solicitud de saludo
+message SaludoRequest {
+  string nombre = 1;
+}
+
+// Mensaje para la respuesta de saludo
+message SaludoResponse {
+  string mensaje = 1;
+}
+
+// Definición del servicio de saludo
+service SaludoService {
+  // Método para obtener un saludo
+  rpc ObtenerSaludo (SaludoRequest) returns (SaludoResponse) {}
+}
